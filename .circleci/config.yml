@@ -4,9 +4,12 @@ orbs:
 workflows:
   build:
     jobs:
-     - cypress/install:
-          build: npm run build
+      - cypress/install
       - cypress/run:
           requires:
             - cypress/install
           record: true
+      - cypress/run:
+          requires:
+            - cypress/install
+          spec: cypress/integration/smoke/*
