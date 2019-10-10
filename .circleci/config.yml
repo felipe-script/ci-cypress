@@ -12,4 +12,3 @@ workflows:
       - cypress/run:
           requires:
             - cypress/install
-          spec: cypress/integration/smoke/*
