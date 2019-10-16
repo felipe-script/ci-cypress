@@ -6,12 +6,12 @@ executors:
     docker:
       - image: 'cypress/base:10'
     environment:
-      CYPRESS_RECORD_KEY: a36584ff-a35c-4187-963e-cb58299eeb81
+      #CYPRESS_RECORD_KEY: a36584ff-a35c-4187-963e-cb58299eeb81
 workflows:
   build:
     jobs:
       - cypress/run:
-         command: cypress run --record --key CYPRESS_RECORD_KEY
+         command: cypress run --record --key a36584ff-a35c-4187-963e-cb58299eeb81
          # executor: base10-foo-bar
 
 #version: 2.1
