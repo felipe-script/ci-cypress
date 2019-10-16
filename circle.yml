@@ -4,5 +4,13 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run:
-            cache-key: 'cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}'
+      - cypress/run
+
+#version: 2.1
+#orbs:
+ # cypress: cypress-io/cypress@1
+#workflows:
+ # build:
+  #  jobs:
+   #   - cypress/run:
+    #        cache-key: 'cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}'
