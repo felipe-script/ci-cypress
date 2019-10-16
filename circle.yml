@@ -4,7 +4,13 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run
+    - checkout
+    - run: 
+          name: "Setup custom environment variables"
+          command: |
+            echo 'export CYPRESS_RECORD_KEY=a36584ff-a35c-4187-963e-cb58299eeb81'
+         - cypress/run
+           record: true
 
 #version: 2.1
 #orbs:
