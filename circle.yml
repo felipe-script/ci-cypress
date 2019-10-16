@@ -5,3 +5,6 @@ workflows:
   build:
     jobs:
       - cypress/run
+      - restore_cache:
+          keys:
+            - cache-{{ checksum "package.json" }}
