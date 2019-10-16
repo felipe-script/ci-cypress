@@ -13,4 +13,4 @@ workflows:
  # build:
   #  jobs:
    #   - cypress/run:
-    #        cache-key: 'cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}'
+    # cache-key: 'cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}'
