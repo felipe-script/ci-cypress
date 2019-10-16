@@ -1,15 +1,17 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
+executors:
+  base10-foo-bar:
+    docker:
+      - image: 'cypress/base:10'
+    environment:
+      CYPRESS_RECORD_KEY: a36584ff-a35c-4187-963e-cb58299eeb81
 workflows:
   build:
     jobs:
-    - run: 
-        name: "Setup custom environment variables"
-        command: |
-         export CYPRESS_RECORD_KEY=a36584ff-a35c-4187-963e-cb58299eeb81
-          - cypress/run
-           record: true
+      - cypress/run:
+         # executor: base10-foo-bar
 
 #version: 2.1
 #orbs:
@@ -18,4 +20,4 @@ workflows:
  # build:
   #  jobs:
    #   - cypress/run:
-    # cache-key: 'cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}'
+    #        cache-key: 'cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}'
