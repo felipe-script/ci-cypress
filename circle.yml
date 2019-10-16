@@ -5,10 +5,4 @@ workflows:
   build:
     jobs:
       - cypress/run:
-        requires:
-              - build_web
-            record: true
-            group: 'circle_test_only'
-            start: 'npm run serve'
-            working_directory: web
-            cache-key: 'cache-{{ arch }}-{{ .Branch }}-{{ checksum "web/package.json" }}'
+            cache-key: 'cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}'
