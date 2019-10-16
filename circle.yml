@@ -4,11 +4,11 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/install:
-          cache-key: >-
-            cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json"
-            }}
       - cypress/run:
-          cache-key: >-
-            cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json"
-            }}
+        requires:
+              - build_web
+            record: true
+            group: 'circle_test_only'
+            start: 'npm run serve'
+            working_directory: web
+            cache-key: 'cache-{{ arch }}-{{ .Branch }}-{{ checksum "web/package.json" }}'
