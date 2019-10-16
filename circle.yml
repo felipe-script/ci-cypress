@@ -4,7 +4,14 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run
+     test:
+    #  - cypress/run
+      steps: 
+        - checkout
       - restore_cache:
           keys:
             - cache-{{ checksum "package.json" }}
+         - run:
+          name: Install dependencies
+          command: npm ci   
+        - run: npm run
