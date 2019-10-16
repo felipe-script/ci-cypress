@@ -2,10 +2,10 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
 executors:
-  base10-foo-bar:
-    docker:
-      - image: 'cypress/base:10'
-    environment:
+  #base10-foo-bar:
+   # docker:
+    #  - image: 'cypress/base:10'
+    #environment:
       #CYPRESS_RECORD_KEY: a36584ff-a35c-4187-963e-cb58299eeb81
 workflows:
   build:
