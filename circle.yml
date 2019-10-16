@@ -4,7 +4,6 @@ orbs:
 workflows:
   build:
     jobs:
-    - checkout
     - run: 
         name: "Setup custom environment variables"
         command: |
